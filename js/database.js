@@ -4396,6 +4396,7 @@ export async function removeSet(id){
     await db.setStore.delete(id)
 }
 export async function getSetById(id){
+    console.log(id)
     const theSet = await db.setStore.get(id);
     return theSet;
 }

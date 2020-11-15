@@ -7,7 +7,7 @@ const mainName = document.querySelector("#title");
 
 import {addNewSet , getSetById} from './database.js'
 
-const searchParams = new URLSearchParams(document.location.search);
+const searchParams = new URLSearchParams(location.search);
 const editMode = searchParams.get("edit") === "" ? true : false;
 const viewMode = searchParams.get("view") === "" ? true : false;
 const editID = +(searchParams.get("id"));
@@ -145,7 +145,7 @@ function removeLastListeners(){
 
 saveBtn.addEventListener("click",(e)=>{
     if(viewMode){
-        window.location.href = window.location.origin + window.location.pathname + "?edit&id=" + editID;
+        goTo("?edit&id=" + editID);
         return
     }
     const validation = validate();
@@ -196,7 +196,7 @@ saveBtn.addEventListener("click",(e)=>{
     }
         
     addNewSet(set);
-    window.location.replace(window.location.origin + "/sets.html")
+    goTo("sets.html")
 })
 
 function validate(){

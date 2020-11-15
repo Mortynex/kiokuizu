@@ -30,7 +30,7 @@ const update = (async()=>{
         })
     })
     getAndAddEventListner('#editSet', 'click', (e, id)=>{
-        window.location.href = window.location.origin + "/newset.html?edit&id=" + id
+        goTo("newset.html?edit&id=" + id)
     })
     getAndAddEventListner("#exportSet","click",(e,id)=>{
         function download(content, fileName) {
@@ -56,7 +56,7 @@ const update = (async()=>{
         download(JSObj, name);
     })
     getAndAddEventListner(".setTitle","click",(e,id)=>{
-        window.location.href = window.location.origin + "/newset.html?view&id=" + id
+        goTo("newset.html?view&id=" + id)
     })
 
 })

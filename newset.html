@@ -6,24 +6,26 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-    <link rel="preload stylesheet" href="css/default.css">
-    <link rel="preload stylesheet" href="css/newSet.css">
+    <link rel="preload stylesheet" as="style" href="css/default.css">
+    <link rel="preload stylesheet" as="style" href="css/newSet.css">
+    <script src="js/default.js"></script>
     <script src="js/newSet.js" type="module"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="https://kit.fontawesome.com/9ff3b5431c.js" crossorigin="anonymous"></script>
-    <link rel="preload stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <link rel="preload stylesheet" as="style" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
 </head>
 <body>
     <a href="sets.html">
-        <i class="fas fa-arrow-left arrowLeft"></i>
+        <svg class="arrowLeft" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Icons" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve"> <g> <path d="M11,23c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4l6-6c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L6.4,16l5.3,5.3   c0.4,0.4,0.4,1,0,1.4C11.5,22.9,11.3,23,11,23z"/> </g> <g> <path d="M27,17H5c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S27.6,17,27,17z"/> </g> </svg>
     </a>
-    <span id="saveBtn">Save</span>
+    
     <header>
         <div class="title">
             <input id="title" value="New Set" placeholder="Set name">
             <i data-tippy-placement="right" data-tippy-content="Set title cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
         </div>
+        <span id="saveBtn">Save</span>
     </header>
     <main>
         <div class="rigth" >

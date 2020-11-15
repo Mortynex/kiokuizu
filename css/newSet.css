@@ -167,7 +167,7 @@ ol{
 @media only screen and (max-width: 48rem){
     #saveBtn{
         top: calc(100vh - 6rem);
-        position: absolute;
+        position: fixed;
         font-size: 1.5rem;
         right: 2rem;
         bottom: 2rem;

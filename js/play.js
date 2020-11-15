@@ -413,7 +413,7 @@ function faze3({answered, points, set}){
     })
 
     homeBtn.addEventListener("click",(e)=>{
-        window.location.href = location.origin + "/index.html"
+        goTo("index.html")
     })
     
 }
