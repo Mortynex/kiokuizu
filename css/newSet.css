@@ -1,0 +1,187 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: "Inconsolata", monospace;
+}
+main{
+    
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+main> *:nth-child(3){
+    width: 25%
+}
+main> *:nth-child(1){
+    width: 15%
+}
+main> *:nth-child(2){
+    width: 45%
+}
+.options > *{
+    margin-bottom: 1rem;
+}
+.pretty .state label{
+    white-space: normal;
+    
+    display: inline;
+}
+.pretty .state label::before, .pretty .state label::after{
+    top: 0 !important;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+.title input{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    font-family: "Inconsolata", monospace;
+    font-size: 2.5rem;
+}
+.question{
+    background-color: rgb(248, 248, 248);
+    width: 95%;
+    display: flex;
+    padding: 0.5rem;
+    margin: 0.4rem;
+}
+.question .utils{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 10%;
+}
+.question .main{
+    width: 90%;
+}
+.labelBox{
+    display: table;
+    white-space: nowrap;
+    margin: 0.2rem;
+    width: 100%;
+}
+.labelBox > *{
+    display: table-cell;
+}
+.labelBox > input{
+    width: 100%;
+}
+.labelBox > label{
+    width: 15%;
+}
+#remove{
+    font-size: 0.8rem;
+    transition: color 0.2s;
+}
+#remove:hover{
+    color: rgb(58, 0, 0);
+}
+/*
+.questionList>li{
+    width: 90%;
+    background-color: rgb(248, 248, 248);
+    padding: 0.8rem;
+    margin: 0.4rem;
+    
+}
+ol{
+    list-style-type: decimal;
+}
+.questionList > li div input{
+    width: 100%;
+}
+.questionList div{
+    display: table;
+    white-space: nowrap;
+    margin: 0.2rem;
+    width: 100%;
+}
+.questionList li > div > *{
+    display: table-cell;
+}
+.questionList div > label{
+    width: 20%;
+}*/
+#title.error{
+    border-color: rgb(194, 48, 48) !important;
+    
+}
+.input.error{
+    border: 1px solid rgb(194, 48, 48) !important;
+    outline-color:rgb(194, 48, 48) ;
+    width: calc(100% - 1rem);
+}
+#title + #errorIcon{
+    font-size: 1.5rem;
+    color: rgb(194, 48, 48);
+    display: none;
+}
+#title.error{
+    width: calc(100% - 2rem);
+}
+#title.error + #errorIcon{
+    display: inline-block;
+}
+.input + #errorIcon{
+    font-size: 1rem;
+    color: rgb(194, 48, 48);
+    margin-left: 0.5rem;
+    display: none;
+}
+.input.error + #errorIcon{
+    display: inline-block;
+}
+
+.remove{
+    position: absolute;
+    transform: translate(6050%, -180%);
+}
+.remove:hover{
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#saveBtn{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+    padding: 1rem 2rem;
+    border: 2px solid black;
+    background: white;
+}
+#saveBtn:hover{
+    border: 2px double black;
+}
+
+@media only screen and (max-width: 48rem){
+    #saveBtn{
+        top: calc(100vh - 6rem);
+        position: absolute;
+        font-size: 1.5rem;
+        right: 2rem;
+        bottom: 2rem;
+        border: 2px solid black;
+    }
+    .title input{
+        width: 60vw;
+    }
+    main{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    main > *{
+        width: 80% !important;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload stylesheet" href="css/default.css">
+    <link rel="preload stylesheet" href="css/play.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+    <script src="//unpkg.com/string-similarity@4.0.1/umd/string-similarity.min.js"></script>
+    <script src="js/play.js" type="module"></script>
+    
+    <link rel="preload stylesheet" href="css/choices.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="preload stylesheet">
+    <script src="https://kit.fontawesome.com/9ff3b5431c.js" crossorigin="anonymous"></script>   
+    <title>Koikuizu Game</title>
+</head>
+<body>
+    
+    <div class="settings window activeWindow">
+        <a href="index.html">
+            <i class="fas fa-arrow-left arrowLeft"></i>
+        </a>
+        <div class="header">
+            <h1 class="title">Game Settings</h1>
+        </div>
+        <div class="gameType">
+            <label for="">Select Game Mode</label>
+            <div data-name="gameMode" class="content oneButton">
+                <button data-value="precise">Precise</button>
+                <button data-default data-value="options">Options</button>
+            </div>
+        </div>
+        <div class="hardness" >
+            <label for="">Select Number of options </label>
+            <div data-name="optionSize" data-number class="content oneButton">
+                <button data-default data-value="3">3</button>
+                <button data-value="4">4</button>
+                <button data-value="5">5</button>
+            </div>
+        </div>
+        <div class="length">
+            <label for="">Select Game Size</label>
+            <div data-name="gameSize" data-number class="content oneButton">
+                <button  data-value="15">15</button>
+                <button data-default  data-value="30">30</button>
+                <button data-value="60">60</button>
+                <button data-value="100">100</button>
+            </div>
+        </div>
+        <div class="set">
+            <label for="gameSet">Select a Set: </label>
+            <div class="content">
+                <select name="" id="gameSets"   ></select>
+            </div>
+        </div>
+        <div class="panel">
+            <button id="startBtn">Start</button>
+        </div>
+    </div>
+    <div class="theGame window ">
+        <div class="header">
+            <div class="left">
+                Score <span id="scoreBoard" class="score">0</span>
+            </div>
+            <div class="center">
+                <h2 id="setName">
+                    
+                </h2>
+            </div>
+            <div class="right">
+                
+            </div>
+            
+        </div>
+        <div class="main">
+            
+            <h2 class="thequestion">?</h2>
+            <div class="answerBox">
+                <div class="optionsAnswer" style="display: none;">
+                </div>
+                <div class="preciseAnswer"  style="display: none;">
+                    <input type="text" spellcheck="false"  id="preciseAnswerInput">
+                    <div class="check" id="checkBtn">Check</div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer">
+            <button id="nextBtn" style="opacity:0">Next =></button>
+        </div>
+    </div>
+    <div class="window results ">
+        <div class="header"></div>
+        <div class="main">
+            <h1 class="percentage">00%</h1>
+            <div class="info">
+                <p>
+                    Set: <span class="nameset">-----</span>
+                </p>
+            </div>
+            <div class="info">
+                <p>
+                    Questions: <span class="numquestion">--</span>
+                </p> 
+                <p>
+                    Right Answers: <span class="numranswer">--</span>
+                </p> 
+                <p>
+                    Wrong Answers: <span class="numwanswer">--</span>
+                </p> 
+            </div class="info">
+            <div >
+                <button id="playAgain">Play again</button> 
+                <button id="homeBtn">Home</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

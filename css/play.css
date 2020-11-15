@@ -1,0 +1,211 @@
+
+.window:not(.activeWindow){
+    display: none !important;
+}
+.window{
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    font-family: "Inconsolata", monospace;
+    font-size: 1rem;
+    user-select: none;
+}
+.activeWindow{
+    display: block ;
+}
+.title{
+    font-family: "Inconsolata", monospace;
+}
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.settings > div{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+button{
+    background: white;
+    border: 1px solid black;
+    margin: 0.4rem;
+    min-height: 2rem;
+    
+    min-width: 6rem;
+    border-radius: 0;
+    transition: box-shadow 0.1s;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    padding: 2px;
+    
+}
+button.active{
+    border: 3px double black;
+    padding: 0px;
+    box-shadow: 2px 2px black;  
+}
+label{
+    text-align: center;
+}
+button:hover{
+    border: 3px double black;
+    box-shadow: 2px 2px black;
+    padding: 0px;
+}
+
+#startBtn{
+    width: 8rem;
+    height: 3rem;
+    font-family: "Inconsolata", monospace;
+    font-size: 1.3rem;
+}
+.choices{
+    width: 18rem;
+    
+}
+#gameSets option{
+    height: 2rem;
+}
+.theGame{
+    display: flex;
+    flex-direction: column;
+}
+.theGame .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+}
+.theGame .main{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.thequestion{
+    width: 50%;
+    text-align: center;
+    
+}
+.optionsAnswer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.optionsAnswer button.wrong{
+    color: white;
+    background-color: darkred;
+    border: 3px double white;
+    box-shadow: 2px 2px rgb(184, 7, 7);  
+}
+.optionsAnswer button.right{
+    color: white;
+    background-color: rgb(16, 139, 0);
+    border: 3px double white;
+    box-shadow: 2px 2px rgb(7, 184, 22);  
+}
+div.footer{
+    display: flex;
+    justify-content: flex-end;
+}
+#nextBtn{
+    font-size: 1.5rem;
+    font-family: "Inconsolata", monospace;
+    height: 2.5rem;
+    width: 8rem;
+}
+#setName{
+    font-size: 2rem;
+    
+}
+#preciseAnswerInput{
+    font-family: "Inconsolata", monospace;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 1px solid black;
+    padding: 6px;
+    outline: none;
+}
+#preciseAnswerInput:focus{
+    border: 3px double black;
+    padding: 4px;
+}
+#preciseAnswerInput.wrong{
+    background-color: darkred;
+    border: 3px double rgb(255, 66, 66);
+    color:white;
+    outline: none;
+}
+#preciseAnswerInput.right{
+    background-color: rgb(43, 156, 23);
+    border: 3px double rgb(67, 255, 67);
+    color:white;
+    outline: none;
+}
+.check{
+    font-size: 1.5rem;
+    padding: 6px;
+    font-family: "Inconsolata", monospace;
+    text-align: center;
+    border: 1px solid black;
+    width: 7rem;
+    display: inline-block;
+    cursor: pointer;
+}
+.check:hover{
+    border: 3px double black;
+    padding: 4px;
+    box-shadow: 2px 2px black;
+}
+.results{
+    display: flex;
+    flex-direction: column;
+}
+.results .header{
+    height: 10%;
+    width: 100%;
+}
+.results .main{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -10%;
+}
+.results .main > *{
+    
+}
+.results .info{
+    border-top: 1px solid rgb(139, 139, 139);
+    width: max(20vw, 10rem);
+    text-align: center;
+}
+.results button{
+    width: 10vw;
+    margin-top: 5vh;
+}
+.percentage{
+    font-size: 5rem;
+}
+.disabled * {
+    color: rgb(194, 194, 194);
+    border-color: rgb(194, 194, 194) !important;
+}
+.disabled button.active, .disabled button:hover{
+    box-shadow: none !important;
+    border: 1px solid black;
+    cursor: not-allowed;
+}

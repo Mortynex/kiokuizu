@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="preload stylesheet" href="css/default.css">
+    <link rel="preload stylesheet" href="css/newSet.css">
+    <script src="js/newSet.js" type="module"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://kit.fontawesome.com/9ff3b5431c.js" crossorigin="anonymous"></script>
+    <link rel="preload stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+</head>
+<body>
+    <a href="sets.html">
+        <i class="fas fa-arrow-left arrowLeft"></i>
+    </a>
+    <span id="saveBtn">Save</span>
+    <header>
+        <div class="title">
+            <input id="title" value="New Set" placeholder="Set name">
+            <i data-tippy-placement="right" data-tippy-content="Set title cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
+        </div>
+    </header>
+    <main>
+        <div class="rigth" >
+            <h3>Tips:</h3>
+            <p>You can split the answers with "||"</p>
+        </div>
+        <div>
+            <h3>Questions: </h3>
+            <ol class="questionList">
+                <li class="question">
+                    <div class="utils">
+                        <span id="nid">1.</span>
+                        <i  id="remove" class="fas fa-times"> </i>
+                        
+                    </div>
+                    <div class="main">
+                        <div class="labelBox">
+                            <label>Question: </label>
+                            <input id="questionInp" type="text"  class="input">
+                            <i data-tippy-content="Question cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
+                        </div>
+                        <div class="labelBox">
+                            <label>Answer:   </label>
+                            <input id="answerInp" type="text" class="input">
+                            <i data-tippy-content="Answer cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="options">
+            <h3>Options:</h3>
+            <div class="pretty p-default p-round p-thick">
+                <input id="canBeReversedCB" type="checkbox" />
+                <div class="state">
+                    <label>Questions and Answers can be reversed</label>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Kato' ;
+    src: url('../fonts/kato.ttf') format('truetype');
+}
+.arrowLeft{
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: left 0.4s;
+    color: black;
+}
+.arrowLeft:hover{
+    left: 1.8rem;
+}
+
+@media only screen and (max-width: 48rem){
+    .arrowLeft{
+        font-size: min(2rem, 7vmin);
+        left: 7vmin;
+        top: 7vmin;
+    }
+}

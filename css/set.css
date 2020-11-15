@@ -1,0 +1,150 @@
+
+header{
+    
+}
+main{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.title{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+.title > *{
+    font-family: "Inconsolata", monospace;
+    font-size: 2.5rem;
+}
+.title > a{
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+}
+.setList{
+    margin: 0;
+    padding: 0;
+    border: 2px solid black;
+    width: 50vw;
+    overflow-y: scroll;
+    
+}
+#dropArea{
+    display: none;
+}
+#dropArea.highlight{
+    background-color: transparent;
+    opacity: 1;
+    font-family: "Inconsolata", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 99;
+}
+.centerDrop{
+    font-size: 5vmin;
+}
+.blur > *:not(#dropArea){
+    filter: blur(1px);
+}
+.setItem{
+    display: flex;
+    padding: 0 2rem 0 2rem;
+    justify-content: space-between;
+    font-family: "Inconsolata", monospace;
+    transition: background-color 0.2s;
+    cursor: default;
+}
+.setItem:hover{
+    background-color: rgb(243, 242, 242);
+}
+.setItem > div{
+    display:flex;
+    align-items: center;
+}
+.setSettingsIcon{
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.setSettings{
+    display: none;
+    position: absolute;
+    z-index: 99;
+    transform: translate(1rem, 3rem);
+    background-color: rgb(253, 253, 253);
+    width: 12rem;
+    padding: 0;
+    border: 1px solid black;
+}
+.setSettings.active, .setSettings:hover, .setSettingsIcon:hover + .setSettings{
+    display: block;
+}
+.setSettings > li *{
+    display: inline;
+    margin-right: 1rem;
+}
+.setItem > h3{
+    cursor: pointer;
+}
+.setSettings > li{
+    height: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1rem;
+    padding: 0 1rem 0 1rem;
+    cursor: pointer;
+}
+.setSettings > li:hover{
+    background-color: rgb(240, 240, 240);
+}
+#deleteSet:hover{
+    background-color: rgb(250, 227, 227) !important;
+    color: rgb(144, 3, 3);
+}
+.setSettings > li > i{
+    font-size: 0.8rem;
+}
+@media only screen and (max-width: 48rem){
+
+    .title > a{
+        position: absolute;
+        right: 5vw;
+        top: 3vw;
+        
+        font-size: 10vmin;
+        
+        font-weight: lighter;
+        text-align: center;
+        
+        
+        border-radius: 50%;
+    }
+    .title h1{
+        font-size: 6vmin;
+    }
+    .arrowLeft{
+        font-size: 5vmin;
+        left: 5vmin;
+        top: 5vmin;
+    }
+    header{
+        align-items: center;
+    }
+}

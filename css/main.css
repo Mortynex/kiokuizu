@@ -1,0 +1,55 @@
+
+main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+body{
+    overflow: hidden;
+}
+button{
+    
+}
+.centredContent{
+    margin-bottom: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+}
+.mainTitle{
+    font-family: 'Kato';
+    letter-spacing: 2vw;
+    font-size: 10vmin;
+    margin-bottom: 10vmin;
+    transition: letter-spacing 0.4s ease-in-out;
+    color: black;
+    position: relative;
+    
+}
+.mainTitle:hover{
+    letter-spacing: 1.9vw;
+}
+.btn{
+    margin: 2vmin;
+    padding: 1em;
+    text-align: center;
+    font-family: "Inconsolata", monospace;
+    font-weight: 600;
+    font-size: 3vmin;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    width: 30vmin;
+}
+a{
+    text-decoration: none;
+}
+.btn:hover{
+    border: 3px double black;
+    margin: calc(2vmin - 1px);
+}
