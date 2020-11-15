@@ -24,10 +24,10 @@ const editID = +(searchParams.get("id"));
         addQuestionToList(
             question.question,
             question.answers.join(" || "),
-            viewMode
+            false
         )
     }
-    updateListener();
+    updateListener(false);
 
     if(viewMode){
         const inputs = [...document.querySelectorAll("input")]
@@ -108,12 +108,12 @@ function addListeners(){
         input.addEventListener('input',updateListener)
     }
 }
-function updateListener(){
+function updateListener(scroll = true){
         removeLastListeners();
-        addQuestionToList()
-        
+        addQuestionToList("","",scroll)
+        console.log(scroll)
 }
-function addQuestionToList(inp1, inp2, disable){
+function addQuestionToList(inp1, inp2, scroll = true){
         const n = [...questionList.childNodes].length - 1
         const newQuestion = document.createElement('li')
         newQuestion.classList.add('question')
@@ -131,7 +131,11 @@ function addQuestionToList(inp1, inp2, disable){
             }
         })
         questionList.append(newQuestion);
-        newQuestion.scrollIntoView(false)
+        console.log(scroll)
+        if(scroll){
+            newQuestion.scrollIntoView(false)
+        }
+        
         lastQuestion = newQuestion;
         inputMovement();
         addListeners();
@@ -236,8 +240,6 @@ function getQuestionCode(n=0,inp1 = "",inp2 = ""){
 
 window.addEventListener("beforeunload",(e)=>{
 
-    const n =  confirm("You recent changes wont be saved unless you save, do you really want to leave")
-    if(!n){
-        e.preventDefault();
-    }
+    return ("You recent changes wont be saved unless you save, do you really want to leave")
+    
 })

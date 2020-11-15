@@ -1,3 +1,6 @@
+const title = document.querySelector('.mainTitle')
+const titlePos = title.getBoundingClientRect()
+
 const main = document.querySelector('main')
 
 document.addEventListener('mousemove',(e)=>{

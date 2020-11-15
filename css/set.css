@@ -17,6 +17,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;    
+    text-align: center;
 }
 .title > *{
     font-family: "Inconsolata", monospace;
@@ -62,7 +63,7 @@ header{
 }
 .setItem{
     display: flex;
-    padding: 0 2rem 0 2rem;
+    padding: 0 1rem 0 2rem;
     justify-content: space-between;
     font-family: "Inconsolata", monospace;
     transition: background-color 0.2s;
@@ -128,7 +129,7 @@ header{
         right: 5vw;
         top: 3vw;
         
-        font-size: 10vmin;
+        
         
         font-weight: lighter;
         text-align: center;
@@ -137,7 +138,11 @@ header{
         border-radius: 50%;
     }
     .title h1{
-        font-size: 6vmin;
+        font-size: 2rem;
+       
+    }
+    .title{
+        width: 16rem;
     }
     .arrowLeft{
         font-size: 5vmin;
@@ -146,5 +151,8 @@ header{
     }
     header{
         align-items: center;
+    }
+    .setList{
+        width: 70vw;
     }
 }

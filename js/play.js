@@ -125,7 +125,7 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
         if(typeof elem !== "object") return
         elem.style.display = state
     }
-    const show = (selem) => setDisplay(selem, "block")
+    const show = (selem) => setDisplay(selem, "flex")
     const hide = (selector) => setDisplay(selem, "none")
 
     if(optionsMode){
@@ -311,7 +311,7 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
                 
                 document.addEventListener("keyup",function handler(e){
                     const code = e.code;
-                    if(code === "Enter" || code === "KeyC"){
+                    if(code === "Enter"){
                         e.preventDefault()
                         finish();
                         document.removeEventListener("keyup",handler)
