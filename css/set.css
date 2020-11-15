@@ -138,11 +138,11 @@ header{
         border-radius: 50%;
     }
     .title h1{
-        font-size: 2rem;
+        font-size: 1.8rem;
        
     }
     .title{
-        width: 16rem;
+        
     }
     .arrowLeft{
         font-size: 5vmin;
@@ -154,5 +154,10 @@ header{
     }
     .setList{
         width: 70vw;
+    }
+}
+@media only screen and (max-width: 16rem){
+    .title h1{
+        display: flex;
     }
 }

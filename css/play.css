@@ -220,6 +220,9 @@ div.footer{
     align-items: center;
     flex-wrap: wrap;
 }
+.center{
+    text-align: end;
+}
 @media only screen and (max-width: 26rem){
     .preciseAnswer{
         display: flex;
@@ -227,6 +230,9 @@ div.footer{
     }
     #preciseAnswerInput{
         width: 80vw;
+    }
+    .right{
+        display: none;
     }
     .check{
         width:80vw;
