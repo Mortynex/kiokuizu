@@ -30,6 +30,7 @@ button{
     flex-direction: column;
     align-items: center;
     cursor: default;
+    position: relative;
 }
 .mainTitle{
     font-family: 'Kato';
@@ -69,4 +70,12 @@ a{
 .btn:hover{
     border: 3px double white;
     padding: 1em;   
+}
+.historyIcon{
+    position: absolute;
+    color: white;
+    font-size: min(7vmin, 2rem);
+    top: 4vmax;
+    right:4vmax;
+    cursor: pointer;
 }

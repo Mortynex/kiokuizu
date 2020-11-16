@@ -168,7 +168,14 @@ saveBtn.addEventListener("click",(e)=>{
     const title = mainName.value;
     const questions = [...document.querySelectorAll(".question")];
     const set = {};
+
+    if(title.length > 16){
+        alert("Your title is too long!")
+        return;
+    }
+
     set["name"] = title;
+
     const questionsArr = [];
     for(const question of questions){
         const questObj = {};

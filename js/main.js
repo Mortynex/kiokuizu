@@ -1,7 +1,7 @@
 const title = document.querySelector('.mainTitle')
 const titlePos = title.getBoundingClientRect()
 
-const main = document.querySelector('main')
+const main = document.querySelector('.centredContent')
 
 document.addEventListener('mousemove',(e)=>{
     const X = ( titlePos.left - e.pageX ) * 0.02;

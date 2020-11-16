@@ -4383,9 +4383,7 @@ db.version(1).stores({
 db.open();
 
 export async function getAllSets(){
-    
     const allSets = await db.setStore.toArray();
-    
     return allSets;
 }
 export async function addNewSet(set){
