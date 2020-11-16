@@ -226,12 +226,12 @@ function getQuestionCode(n=0,inp1 = "",inp2 = ""){
 <div class="main">
     <div class="labelBox">
         <label>Question: </label>
-        <input value="${inp1}" id="questionInp" type="text"  class="input">
+        <input autocomplete="off" value="${inp1}" id="questionInp" type="text"  class="input">
         <i data-tippy-content="Question cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
     </div>
     <div class="labelBox">
         <label>Answer:   </label>
-        <input value="${inp2}" id="answerInp" type="text" class="input">
+        <input autocomplete="off" value="${inp2}" id="answerInp" type="text" class="input">
         <i data-tippy-content="Answer cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
     </div>
 </div>`

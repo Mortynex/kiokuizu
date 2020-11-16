@@ -12,9 +12,14 @@
     font-family: "Inconsolata", monospace;
     font-size: 1rem;
     user-select: none;
+    color: white;
+}
+*{
+    color: white;
 }
 .activeWindow{
-    display: block;
+    display: flex !important;
+    
 }
 .title{
     font-family: "Inconsolata", monospace;
@@ -24,6 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(60deg,#2b1de8, #dd00f3);
 }
 .settings > div{
     height: 20%;
@@ -38,8 +44,8 @@
     margin-top: 1rem;
 }
 button{
-    background: white;
-    border: 1px solid black;
+    background: transparent;
+    border: 1px solid white;
     margin: 0.4rem;
     min-height: 2rem;
     
@@ -50,19 +56,19 @@ button{
     outline: none;
     box-sizing: border-box;
     padding: 2px;
-    
+    background-color:rgb(0,0,0,30%);
 }
 button.active{
-    border: 3px double black;
+    border: 3px double white;
     padding: 0px;
-    box-shadow: 2px 2px black;  
+    box-shadow: 2px 2px white;  
 }
 label{
     text-align: center;
 }
 button:hover{
-    border: 3px double black;
-    box-shadow: 2px 2px black;
+    border: 3px double white;
+    box-shadow: 2px 2px white;
     padding: 0px;
 }
 
@@ -82,6 +88,7 @@ button:hover{
 .theGame{
     display: flex;
     flex-direction: column;
+    background: linear-gradient(60deg,#085472, #3b0536);
 }
 .theGame .header{
     display: flex;
@@ -96,6 +103,7 @@ button:hover{
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    
 }
 .thequestion{
     width: 50%;
@@ -107,18 +115,19 @@ button:hover{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 .optionsAnswer button.wrong{
     color: white;
-    background-color: darkred;
+    background-color: rgb(200, 0, 0, 60%);
     border: 3px double white;
-    box-shadow: 2px 2px rgb(184, 7, 7);  
+    box-shadow: 2px 2px rgba(95, 1, 1, 0.6);  
 }
 .optionsAnswer button.right{
     color: white;
-    background-color: rgb(16, 139, 0);
+    background-color: rgb(0, 200, 0, 60%);
     border: 3px double white;
-    box-shadow: 2px 2px rgb(7, 184, 22);  
+    box-shadow: 2px 2px rgba(1, 98, 1, 0.6);  
 }
 div.footer{
     display: flex;
@@ -138,12 +147,12 @@ div.footer{
     font-family: "Inconsolata", monospace;
     font-size: 1.5rem;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 6px;
     outline: none;
 }
 #preciseAnswerInput:focus{
-    border: 3px double black;
+    border: 3px double white;
     padding: 4px;
 }
 #preciseAnswerInput.wrong{
@@ -163,19 +172,20 @@ div.footer{
     padding: 6px;
     font-family: "Inconsolata", monospace;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid white;
     width: 7rem;
     display: inline-block;
     cursor: pointer;
 }
 .check:hover{
-    border: 3px double black;
+    border: 3px double white;
     padding: 4px;
-    box-shadow: 2px 2px black;
+    box-shadow: 2px 2px white;
 }
 .results{
     display: flex;
     flex-direction: column;
+    background: linear-gradient(60deg,#ff2400, #dd00f3);
 }
 .results .header{
     height: 10%;
@@ -194,7 +204,7 @@ div.footer{
     
 }
 .results .info{
-    border-top: 1px solid rgb(139, 139, 139);
+    border-top: 1px solid white;
     width: max(20vw, 10rem);
     text-align: center;
 }
@@ -211,7 +221,7 @@ div.footer{
 }
 .disabled button.active, .disabled button:hover{
     box-shadow: none !important;
-    border: 1px solid black;
+    border: 1px solid white;
     cursor: not-allowed;
 }
 .navBtns{

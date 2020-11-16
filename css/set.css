@@ -2,6 +2,10 @@
 header{
     
 }
+body{
+    background: linear-gradient(60deg,#2b1de8, #dd00f3);
+    color: white;
+}
 main{
     height: 80%;
     display: flex;
@@ -27,13 +31,13 @@ header{
     font-size: 4rem;
     font-weight: 500;
     margin: 0;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 .setList{
     margin: 0;
     padding: 0;
-    border: 2px solid black;
+    border: 2px solid white;
     width: 50vw;
     overflow-y: scroll;
     
@@ -70,11 +74,18 @@ header{
     cursor: default;
 }
 .setItem:hover{
-    background-color: rgb(243, 242, 242);
+    background: white;
+    
+}
+.setItem:hover h3{
+    color: #830FEE;
 }
 .setItem > div{
     display:flex;
     align-items: center;
+}
+.setItem:hover .setSettingsIcon{
+    color: #AF08F0;
 }
 .setSettingsIcon{
     font-size: 1.4rem;
@@ -87,10 +98,11 @@ header{
     position: absolute;
     z-index: 99;
     transform: translate(1rem, 3rem);
-    background-color: rgb(253, 253, 253);
+    background-color: #AF08F0;
     width: 12rem;
     padding: 0;
-    border: 1px solid black;
+    border: 1px solid white;
+    color: white;
 }
 .setSettings.active, .setSettings:hover, .setSettingsIcon:hover + .setSettings{
     display: block;
@@ -113,7 +125,8 @@ header{
     cursor: pointer;
 }
 .setSettings > li:hover{
-    background-color: rgb(240, 240, 240);
+    background-color:white;
+    color: #AF08F0;
 }
 #deleteSet:hover{
     background-color: rgb(250, 227, 227) !important;

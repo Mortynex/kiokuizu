@@ -5,9 +5,19 @@ main{
     justify-content: center;
     align-items: center;
     position: relative;
+    
 }
 body{
     overflow: hidden;
+    
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    animation: rainbow 18s ease infinite;
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
 }
 button{
     
@@ -23,9 +33,9 @@ button{
     font-family: 'Kato';
     letter-spacing: 2vw;
     font-size: 10vmin;
-    margin-bottom: 10vmin;
+    margin-bottom: 6vmin;
     transition: letter-spacing 0.4s ease-in-out;
-    color: black;
+    color: white;
     position: relative;
     
 }
@@ -34,22 +44,27 @@ button{
 }
 .btn{
     margin: 2vmin;
-    padding: 1em;
+    padding: calc(1em + 2px);
     text-align: center;
     font-family: "Inconsolata", monospace;
     font-weight: 600;
     font-size: 3vmin;
-    border: 2px solid black;
+    border: 2px solid white;
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    color: white;
     display: inline-block;
     width: 30vmin;
+    outline: none;
 }
 a{
     text-decoration: none;
+    outline: none;
+}
+.btn:focus{
+    outline: none;
 }
 .btn:hover{
-    border: 3px double black;
-    margin: calc(2vmin - 1px);
+    border: 3px double white;
+    padding: 1em;   
 }

@@ -6,14 +6,16 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    
     <link rel="preload stylesheet" as="style" href="css/default.css">
     <link rel="preload stylesheet" as="style" href="css/newSet.css">
+    <link rel="preload stylesheet" as="style" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <script src="js/default.js"></script>
     <script src="js/newSet.js" type="module"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="https://kit.fontawesome.com/9ff3b5431c.js" crossorigin="anonymous"></script>
-    <link rel="preload stylesheet" as="style" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    
 </head>
 <body>
     <a href="sets.html">
@@ -44,12 +46,12 @@
                     <div class="main">
                         <div class="labelBox">
                             <label>Question: </label>
-                            <input id="questionInp" type="text"  class="input">
+                            <input autocomplete="off" id="questionInp" type="text"  class="input">
                             <i data-tippy-content="Question cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
                         </div>
                         <div class="labelBox">
                             <label>Answer:   </label>
-                            <input id="answerInp" type="text" class="input">
+                            <input autocomplete="off" id="answerInp" type="text" class="input">
                             <i data-tippy-content="Answer cannot be empty" class="fas fa-exclamation" id="errorIcon"></i>
                         </div>
                     </div>
