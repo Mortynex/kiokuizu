@@ -30,6 +30,8 @@
     flex-direction: column;
     align-items: center;
     background: linear-gradient(60deg,#2b1de8, #dd00f3);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .settings > div{
     height: 20%;
@@ -89,6 +91,9 @@ button:hover{
     display: flex;
     flex-direction: column;
     background: linear-gradient(60deg,#085472, #3b0536);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
 }
 .theGame .header{
     display: flex;
@@ -102,13 +107,16 @@ button:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     
 }
 .thequestion{
     width: 50%;
     text-align: center;
     
+}
+.thequestion.smaller{
+    font-size: 1.6rem;
 }
 .optionsAnswer{
     display: flex;
@@ -117,17 +125,27 @@ button:hover{
     flex-wrap: wrap;
     
 }
+.optionsAnswer button{
+    font-family: "Inconsolata", monospace;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+.optionsAnswer button:hover{
+    padding: calc(0.5rem - 2px);
+}
 .optionsAnswer button.wrong{
     color: white;
     background-color: rgb(200, 0, 0, 60%);
     border: 3px double white;
-    box-shadow: 2px 2px rgba(95, 1, 1, 0.6);  
+    box-shadow: 3px 3px rgba(95, 1, 1, 0.6); 
+    padding: calc(0.5rem - 2px); 
 }
 .optionsAnswer button.right{
     color: white;
     background-color: rgb(0, 200, 0, 60%);
     border: 3px double white;
-    box-shadow: 2px 2px rgba(1, 98, 1, 0.6);  
+    box-shadow: 3px 3px rgba(1, 98, 1, 0.6);  
+    padding: calc(0.5rem - 2px);
 }
 div.footer{
     display: flex;
@@ -150,20 +168,24 @@ div.footer{
     border: 1px solid white;
     padding: 6px;
     outline: none;
+    background:transparent;
+    box-shadow: 2px 2px white;
 }
 #preciseAnswerInput:focus{
     border: 3px double white;
     padding: 4px;
 }
 #preciseAnswerInput.wrong{
-    background-color: darkred;
+    background-color: rgb(200, 0, 0, 60%);
     border: 3px double rgb(255, 66, 66);
+    box-shadow: 2px 2px rgb(255, 66, 66);
     color:white;
     outline: none;
 }
 #preciseAnswerInput.right{
-    background-color: rgb(43, 156, 23);
+    background-color: rgb(0, 200, 0, 60%);
     border: 3px double rgb(67, 255, 67);
+    box-shadow: 2px 2px rgb(67, 255, 67);
     color:white;
     outline: none;
 }
@@ -176,6 +198,7 @@ div.footer{
     width: 7rem;
     display: inline-block;
     cursor: pointer;
+    box-shadow: 2px 2px white;
 }
 .check:hover{
     border: 3px double white;
@@ -186,6 +209,8 @@ div.footer{
     display: flex;
     flex-direction: column;
     background: linear-gradient(60deg,#ff2400, #dd00f3);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .results .header{
     height: 10%;

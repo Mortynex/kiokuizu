@@ -3,6 +3,8 @@ body{
     flex-direction: column;
     font-family: "Inconsolata", monospace;
     background: linear-gradient(60deg,#2b1de8, #1ddde8);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
 }
 main{

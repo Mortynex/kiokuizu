@@ -111,7 +111,6 @@ function addListeners(){
 function updateListener(scroll = true){
         removeLastListeners();
         addQuestionToList("","",scroll)
-        console.log(scroll)
 }
 function addQuestionToList(inp1, inp2, scroll = true){
         const n = [...questionList.childNodes].length - 1
@@ -126,12 +125,11 @@ function addQuestionToList(inp1, inp2, scroll = true){
                 const question = questions[i]
                 const nid = question.querySelector('#nid');
                 if(!nid) return
-                console.log(nid.innerHTML)
                 nid.innerHTML = (i+1) + "."
             }
         })
         questionList.append(newQuestion);
-        console.log(scroll)
+        
         if(scroll){
             newQuestion.scrollIntoView(false)
         }

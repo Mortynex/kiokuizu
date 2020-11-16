@@ -4,6 +4,9 @@ header{
 }
 body{
     background: linear-gradient(60deg,#2b1de8, #dd00f3);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-attachment: fixed;
     color: white;
 }
 main{
@@ -39,8 +42,8 @@ header{
     padding: 0;
     border: 2px solid white;
     width: 50vw;
-    overflow-y: scroll;
-    
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 #dropArea{
     display: none;

@@ -42,9 +42,7 @@ const selectButtons = document.querySelectorAll(".oneButton")
 setList.addEventListener("change",(e)=>{
     const id = +e.detail.value;
     buttonsState["setId"] = id;
-    console.log(choices)
 });
-console.log(choices)
 for(const content of selectButtons){
     const name = content.dataset.name || "null";
     buttonsState[name] = {}
@@ -87,7 +85,6 @@ const startGameButton = document.querySelector("#startBtn")
 
 startGameButton.addEventListener('click',(e)=>{
     switchToWindow(".theGame")
-    console.log(buttonsState)
     fazeTwo(buttonsState);
 })
 //fazeTwo({gameType:'precise',setId:4, optionSize: 4})
@@ -98,13 +95,19 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
 
     const preciseMode = gameMode === "precise"
     const optionsMode = gameMode === "options"
-    console.log(optionsMode)
+
     const questionBox = document.querySelector(".thequestion")
 
     const setName = document.querySelector("#setName");
     setName.innerHTML = set.name;
 
     function setQuestion(question){
+        if(question.length > 18){
+            questionBox.classList.add("smaller")
+        }
+        else{
+            questionBox.classList.remove("smaller")
+        }
         questionBox.innerHTML = question;
     }
     function isLike(string,string2){
@@ -127,6 +130,8 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
     }
     const show = (selem) => setDisplay(selem, "flex")
     const hide = (selector) => setDisplay(selem, "none")
+    
+    let lastQuestion;
 
     if(optionsMode){
         show(".optionsAnswer");
@@ -153,12 +158,14 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
             }
         }
         
-        play = function ({ questions, optionSize, options:GameOptions }){
+        play = function pick(data){
+            let { questions, optionSize, options:GameOptions } = data;
+
             const { reversable } = GameOptions;
             
             if(reversable){
                 const picked = Random.pick([1,1,1,1,1,2,2,2,2]);
-                console.log({picked})
+                
                 if(picked === 2){
                     const copy = (obj) => JSON.parse(JSON.stringify(obj))
                     questions = copy(questions).map(({question, answers})=>{
@@ -176,7 +183,12 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
             let { question, answers} = thequestion;
             
             const rightAnswer = Random.pick(answers);
-            console.log({rightAnswer})
+            
+            if(lastQuestion === question || lastQuestion === rightAnswer){
+                return pick(data);
+            }
+            lastQuestion = question;
+
             let otherQuestions = questions.filter(({question:qs})=> !isLike(qs, question));
     
             let options = [rightAnswer];
@@ -227,7 +239,7 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
                     
                     const isUserCorrect = userAnswer === rightAnswer;
                     const userButton = e.target;
-                    console.log(rightButton, rightAnswer)
+                    
                     rightButton.classList.add("right")
                     if(!isUserCorrect){
                         userButton.classList.add("wrong")
@@ -257,17 +269,19 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
             preciseInput.value = "";
         }
 
-        play = function ({ questions, optionSize, options:GameOptions }){
+        play = function pick(data){
             resetInputClass();
+
+            let { questions, optionSize, options:GameOptions } = data
 
             const { reversable } = GameOptions;
             if(reversable){
                 const picked = Random.pick([1,1,1,1,2,2,2]);
                 if(picked === 2){
                     const copy = (obj) => JSON.parse(JSON.stringify(obj))
-                    questions = copy(questions).map(({question, answers})=>{
-                        const newQs = Random.pick(answers);
-                        const newAns = [question]
+                    questions = copy(questions).map(({question:qs, answers:ans})=>{
+                        const newQs = Random.pick(ans);
+                        const newAns = [qs]
                         return {
                             question: newQs,
                             answers: newAns
@@ -280,10 +294,17 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
             let { question, answers} = thequestion;
             
             const rightAnswer = Random.pick(answers);
-            console.log({rightAnswer})
+            
+            if(lastQuestion === question || lastQuestion === rightAnswer){
+                return pick(data);
+            }
+            lastQuestion = question;
             
             setQuestion(question);
             preciseInput.focus();
+            preciseInput.addEventListener("blur",(e)=>{
+                preciseInput.focus();
+            })
             return new Promise((resolve)=>{
                 function finish(){
                     const userAnswer = preciseInput.value;
@@ -305,7 +326,10 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
                     );
                 }
                 preciseCheck.addEventListener("click",function handler(e){
-                    finish();
+                    if(preciseCheck.value.length !== 0){
+                        finish();
+                    }
+                    
                     document.removeEventListener("click",handler)
                 })
                 
@@ -353,7 +377,6 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
         await new Promise((resolve)=>{
             document.addEventListener("keyup",(e)=>{
                 const code = e.code;
-                console.log(code)
                 if(code === "Enter" || code === "KeyN" || code === "Space"){
                     e.preventDefault()
                     resolve();
