@@ -111,6 +111,10 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
         questionBox.innerHTML = question;
     }
     function isLike(string,string2){
+        const regExp = /^\W+$/
+        if((/^\W+$/).test(string) || regExp.test(string2)){
+            return false;
+        }
         const convert = (str) => {
             return str.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s/,"").replace(/\W/gi,"_");
         }
@@ -190,7 +194,7 @@ async function fazeTwo({ gameSize, gameMode, optionSize, setId, options}){
             lastQuestion = question;
 
             let otherQuestions = questions.filter(({question:qs})=> !isLike(qs, question));
-    
+            console.log({otherQuestions})
             let options = [rightAnswer];
     
             otherQuestions = otherQuestions.map((qs)=>{
